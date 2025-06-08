@@ -4,17 +4,25 @@
 #include "Database.h"
 #include "Query.h"
 #include <memory>
-#include <vector>
 
 namespace dbms {
 
 class QueryExecutor {
 public:
+    /**
+     * 构造函数
+     * @param db 引用的数据库实例
+     */
     QueryExecutor(Database& db);
+
+    /**
+     * 执行传入的 Query
+     * @param q 唯一指针，指向要执行的查询对象
+     */
     void execute(std::unique_ptr<Query> q);
-    // 可扩展事务、日志等功能
+
 private:
-    Database& _db;
+    Database& _db; // 引用的数据库实例
 };
 
 } // namespace dbms

@@ -6,11 +6,11 @@
 
 namespace dbms {
 
-using Field = std::string;  // 简化：所有类型都以字符串存储
+using Field = std::string;  // 所有字段都以字符串形式存储
 
 struct Record {
-    int                    id;     // 主键或内部标识
-    std::vector<Field>     fields; // 各列数据
+    int id;                    // 记录唯一标识或主键
+    std::vector<Field> fields; // 每列的字段值列表
 };
 
 } // namespace dbms
